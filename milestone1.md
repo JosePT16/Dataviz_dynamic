@@ -2,11 +2,11 @@
 
 ## Description
 
-The project follow the narrative developed in the static project. And plan to present them as a single project. Specifically:
+The project follow the narrative developed in the static project and plan to present them as a single project. Specifically the dynamic project will:
 
-• Showing on a map the transitions to democracy or authoritarianism over the years, highlighting the regional dynamics of these transitions.
+• Show the transitions to democracy or authoritarianism over the years, highlighting the regional dynamics of these transitions.
 
-• Showing that remaining in a given regime type is determined mainly by two factors: inequality and the cost of repression. When the cost of repression is low, regimes can maintain authoritarian rule, especially in societies with low inequality where demands for redistribution are limited. On the other hand, when the cost of repression is high and inequality is low, countries are more likely to remain democratic, as elites prefer inclusive institutions to costly repression. In all other cases, specially when inequality is high, countries tend to experience instability between democratic and authoritarian regimes.
+• Show that remaining in a given regime type is determined mainly by two factors: inequality and the cost of repression. When the cost of repression is low, regimes can maintain authoritarian rule, especially in societies with low inequality where demands for redistribution are limited. On the other hand, when the cost of repression is high and inequality is low, countries are more likely to remain democratic, as elites prefer inclusive institutions to costly repression. In all other cases, specially when inequality is high, countries tend to experience instability between democratic and authoritarian regimes.
 
 ## Technical Plan re: Option A/B/C/D
 
