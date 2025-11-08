@@ -19,7 +19,7 @@ I am planning to develop Option B, which includes two visualizations:
 
 ## Mockup
 
-For the fist visualization:
+For the fist visualization (but not using points but choropleth map):
 
 ![](./Viz1.jpg)
 
