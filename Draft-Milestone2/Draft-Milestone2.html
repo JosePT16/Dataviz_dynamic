@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <style>
+    body {
+      background: #efefef;
+      margin: 20px;
+      font-family: "Times New Roman";
+    }
+
+    header h1 {
+      font-family: "Times New Roman";
+      font-size: 60px;
+      font-weight: bold;
+      color: #A53F2B;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 1px;
+    }
+
+    header .subtitle {
+      font-family: "Times New Roman";
+      font-size: 40px;
+      color: #000000;
+      text-align: center;
+      margin-top: 1px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 40px;
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    .text-box {
+      font-size: 35px;
+      line-height: 1.4;
+      background: #efefef;
+      padding: 20px;
+      text-align: justify;
+    text-justify: inter-word; 
+ 
+    }
+
+    .viz-box {
+      background: #efefef;
+      padding: 10px;
+      text-align: center;
+    }
+
+    svg {
+      display: block;
+      margin: 0 auto;
+      position: static !important;
+    }
+
+    .tooltip {
+      position: absolute;
+      background: white;
+      padding: 6px 10px;
+      border: 1px solid #aaa;
+      border-radius: 4px;
+      font-size: 12px;
+      pointer-events: none;
+      opacity: 0;
+    }
+  /* IA: How to change the color of the slider in D3*/
+  #yearSlider {
+    -webkit-appearance: none;
+    width: 300px;
+    height: 6px;
+    background: #A53F2B;   
+    margin: 10px 0;
+  }
+
+  #yearSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #720404;   
+    cursor: pointer;
+  }
+
+   #scatterYearSlider {
+    -webkit-appearance: none;
+    width: 300px;
+    height: 6px;
+    background: #A53F2B;   
+    margin: 10px 0;
+  }
+
+
+  #scatterYearSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #720404;   
+    cursor: pointer;
+  }
+  </style>
+
+  <!-- including d3 graphics -->
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Dynamics of demorcacy</h1>
+    <h2 class="subtitle">If it causes growth, why is it moving backward?</h2>
+</header>
+
+
+
+
+
+<div class="grid-container">
+
+  <div class="text-box">
+      <p>Although democracy promotes economic growth, many countries do not adopt it.
+        According to Acemoglu and Robinson, whether democracy consolidates or backslides depends primarily 
+        on two forces: inequality and the cost of repression. When inequality is high and repression is cheap, 
+        elites prefer autocracy because they fear redistribution and can suppress opposition. When inequality 
+        is low and repression is costly, democracy is more likely to consolidate because elites face little
+        threat from revolution and cannot easily repress. Countries with both high inequality and high 
+        repression costs tend to be unstable, oscillating during the years between autocracy and democracy.
+      </p>
+  </div>
+
+  <div class="viz-box">
+      <svg id="scatterplot" width="800" height="500"></svg>
+
+      <div id="scatter-controls" style="text-align:center; margin-bottom:20px;">
+          <span id="scatterYearLabel">1990</span>
+          <input type="range" id="scatterYearSlider" min="1980" max="2020" step="1" value="1990">
+      </div>
+  </div>
+
+
+  <div class="viz-box">
+      <svg id="my_dataviz" width="900" height="500"></svg>
+
+      <div id="controls" style="text-align:center; margin-top:10px;">
+          <span id="yearLabel">1992</span>
+          <input type="range" id="yearSlider" min="1960" max="2010" step="1" value="1992">
+      </div>
+  </div>
+
+  <div class="text-box">
+      <p>This dynamics are also reinforced by geographical waves that promote regional democratizations or
+        autocratizations. Specifically, when elites see democratization in their neighbors, they perceive
+        a higher risk of revolution and are more likely to make democratic concessions. The same but opposite
+        mechanism applies when autocratizations happen in the neighbor. In the map on the left it is possible
+        to see the fall of autocracies during the 60s and 70s in Latin America, as well as the democratization
+        waves in Latin America in the 80s and 90s, in Africa in the 1990s, and in the ex-Soviet countries also 
+        in the 90s.
+      </p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="scatter.js"></script>
+
+</body>
+</html>
