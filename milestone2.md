@@ -2,6 +2,7 @@
 Jose Pajuelo
 
 
+
 ## Goal
 
 My goal is to develop a narrative that shows the dynamic of democracy in 2 aspects:
