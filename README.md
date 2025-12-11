@@ -1,5 +1,4 @@
 # Democracy Paradox – Interactive Data Visualization Project
-
 This project is a web article inspired by the work of James Robinson and Daron Acemoglu. Following their arguments, it explores how democracy can foster economic growth and examines its dynamics and trends across the world through a combination of static visualizations, interactive charts, and animated regional maps.
 
 It is built entirely with HTML, CSS, and D3 and is deployed via GitHub Pages:
