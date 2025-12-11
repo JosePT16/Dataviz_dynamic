@@ -11,8 +11,8 @@ var selectedVariable = "yeardem";
 // Map
 var path = d3.geoPath();
 var projection = d3.geoMercator()
-  .scale(100)
-  .center([0, 20])
+  .scale(50)
+  .center([0, -50])
   .translate([width / 2, height / 2]);
 
 // Data container
@@ -29,12 +29,10 @@ var legendData = [
 ];
 
 // Loading data
-d3.queue()
-  .defer(d3.json, "https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson")
-  .defer(d3.csv, "trial1.csv", function(d) {
-
+Promise.all([
+  d3.json("world.geojson"),
+  d3.csv("trial1.csv", function(d) {
     d.year = +d.year;
-    d.year = d.year.toString();
 
     if (!dataByYear[d.year]) dataByYear[d.year] = {};
 
@@ -45,7 +43,10 @@ d3.queue()
 
     return d;
   })
-  .await(ready);
+]).then(([topo]) => {
+  ready(null, topo);
+});
+
 
 
 // DRAW MAP
@@ -133,5 +134,5 @@ function updateMap(year) {
 d3.select("#yearSlider").on("input", function() {
   let year = +this.value;
   d3.select("#yearLabel").text(year);
-  updateMap(year);
+  updateMap(+year);
 });
